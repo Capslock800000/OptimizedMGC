@@ -1,4 +1,4 @@
-// MobileGlues - main.cpp
+// OptimizedMG - main.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -30,7 +30,7 @@ void init_config() {
 }
 
 void show_license() {
-    LOG_V("The Open Source License of MobileGlues: ");
+    LOG_V("The Open Source License of OptimizedMG: ");
     LOG_V("  %s", license);
 }
 

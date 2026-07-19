@@ -86,6 +86,7 @@ endif()
 
 set(PROFILING OFF)
 
+# OptimizedMG code merged into gl/mg.cpp and includes.h; no extra source files required
 add_library(${CMAKE_PROJECT_NAME} SHARED
     init.cpp
     main.cpp
@@ -110,6 +111,9 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
     gl/glsl/glsl_for_es.cpp
     gl/glsl/cache.cpp
     gl/FSR1/FSR1.cpp
+    optimized/FastMath.cpp
+    optimized/MatrixMath.cpp
+    optimized/VectorMath.cpp
 
     gl/vertexattrib.cpp
     glx/lookup.cpp
@@ -125,7 +129,8 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ./includes
     ./3rdparty/glm
-    ./3rdparty/xxhash)
+    ./3rdparty/xxhash
+    ./optimized)
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
